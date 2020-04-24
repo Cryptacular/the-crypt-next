@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import Head from "next/head";
 
 const currentYear = new Date().getFullYear();
 
@@ -11,20 +11,21 @@ export default function Home() {
       </Head>
 
       <main>
-        <h1 className="title">
-          Welcome to The Crypt!
-        </h1>
+        <h1 className="title">Welcome to The Crypt!</h1>
 
-        <p className="description">
-          Nick Mertens' Portfolio
-        </p>
+        <p className="description">Nick Mertens' Portfolio</p>
 
         <p>Coming soon, stay tuned!</p>
+
+        <div className="social">
+          <a className="social-link" href="https://github.com/Cryptacular">GitHub</a>
+          <a className="social-link" href="https://twitter.com/Cryptacular">Twitter</a>
+          <a className="social-link" href="https://www.linkedin.com/in/nick-mertens">LinkedIn</a>
+          <a className="social-link" href="https://medium.com/@Cryptacular">Medium</a>
+        </div>
       </main>
 
-      <footer>
-        &copy; {currentYear} Nick Mertens
-      </footer>
+      <footer>&copy; {currentYear} Nick Mertens</footer>
 
       <style jsx>{`
         .container {
@@ -145,8 +146,33 @@ export default function Home() {
           line-height: 1.5;
         }
 
+        .social {
+          display: flex;
+          margin: 1rem 0;
+          width: 100%;
+        }
+        
+        .social-link {
+          margin: 1rem;
+          flex-basis: 45%;
+          padding: 1.5rem;
+          text-align: center;
+          color: inherit;
+          text-decoration: none;
+          border: 1px solid #eaeaea;
+          border-radius: 10px;
+          transition: color 0.15s ease, border-color 0.15s ease;
+        }
+
+        .social-link:hover,
+        .social-link:focus,
+        .social-link:active {
+          color: #0070f3;
+          border-color: #0070f3;
+        }
+
         @media (max-width: 600px) {
-          .grid {
+          .grid, .social {
             width: 100%;
             flex-direction: column;
           }
@@ -168,5 +194,5 @@ export default function Home() {
         }
       `}</style>
     </div>
-  )
+  );
 }
